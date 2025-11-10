@@ -5,7 +5,8 @@ const AddMovie = ({ onAdd }) => {
     title: "",
     description: "",
     posterURL: "",
-    rating: 0
+    rating: 0,
+    trailer: ""
   });
 
   const handleChange = (e) => {
@@ -25,6 +26,7 @@ const AddMovie = ({ onAdd }) => {
       <input name="description" placeholder="Description" value={newMovie.description} onChange={handleChange} />
       <input name="posterURL" placeholder="Poster URL" value={newMovie.posterURL} onChange={handleChange} />
       <input name="rating" type="number" placeholder="Rating (0-5)" value={newMovie.rating} onChange={handleChange} />
+      <input name="trailer" placeholder="Trailer" value={newMovie.trailer} onChange={handleChange} />
       <button type="submit">Add Movie</button>
     </form>
   );

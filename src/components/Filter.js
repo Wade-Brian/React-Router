@@ -1,20 +1,25 @@
-import React from 'react';
+import React from "react";
 
-const Filter = ({ setFilter }) => {
-  const handleTitleChange = (e) => {
-    setFilter((prev) => ({ ...prev, title: e.target.value }));
-  };
-
-  const handleRatingChange = (e) => {
-    setFilter((prev) => ({ ...prev, rating: Number(e.target.value) }));
-  };
-
+function Filter({ setFilterTitle, setFilterRating }) {
   return (
-    <div className="filter">
-      <input type="text" placeholder="Search by title" onChange={handleTitleChange} />
-      <input type="number" placeholder="Min rating (0-5)" onChange={handleRatingChange} />
+    <div style={{ marginBottom: "20px" }}>
+      <input
+        type="text"
+        placeholder="Search by title..."
+        onChange={(e) => setFilterTitle(e.target.value)}
+        style={{ padding: "8px", marginRight: "10px" }}
+      />
+
+      <input
+        type="number"
+        placeholder="Minimum rating"
+        min="0"
+        max="5"
+        onChange={(e) => setFilterRating(Number(e.target.value))}
+        style={{ padding: "8px", width: "120px" }}
+      />
     </div>
   );
-};
+}
 
 export default Filter;
